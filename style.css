@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* <---------- HEADER ----------> */
+
+header {
+    text-align: center;
+    padding: 1rem 2rem;
+    background-color: #EADEB5;
+}
+
+#presentation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+#btnDevis {
+    width: 15%;
+    padding: 1rem;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    background-color: rgb(121, 12, 12);
+    transition: background-color 0.3s;
+}
+
+#btnDevis:hover {
+    background-color: rgb(169, 16, 16);
+}
+
+
+/* <---------- SECTION CHOCOLAT ----------> */
+
+#chocolat {
+    text-align: center;
+    padding: 1rem 2rem;
+    background-color: #F4C895;
+}
+
+#chocolat h2, #client h2 {
+    margin-bottom: 2rem;
+}
+
+#produits {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.card {
+    padding: 1rem;
+    text-align: center;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    background-color: #fddeb8;
+    border-radius: 20px;
+    box-shadow: 0 0 5px rgb(0, 0, 0, 0.3);
+}
+
+.card img {
+    width: 80%;
+    border-radius: 20px;
+}
+
+
+/* <---------- SECTION CLIENT ----------> */
+
+#client {
+    text-align: center;
+    padding: 1rem 2rem;
+    background-color: #AA714B;
+    color: white;
+}
+
+#commentaires {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.comments {
+    background-color: #C48E61;
+    width: 70%;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgb(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
