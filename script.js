@@ -113,3 +113,14 @@ fetch("https://js-dynamic-portfolio-data-makerslab-emlyon-cdweb-8f83155c64a0cc.g
     afficherProduits(data);
     afficherCommentaire(data);
 })
+
+
+//Gestion de la map à l'aide de leaflet.js
+
+var map = L.map('map').setView([45.741429346346024, 4.839417331016642], 17);
+var marker = L.marker([45.741429346346024, 4.839417331016642]).addTo(map);
+
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+}).addTo(map);
