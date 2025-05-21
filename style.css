@@ -1,7 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap');
+
+:root {
+    --couleur-fond-site: #F5F5F5;
+    --couleur-bouton: #583101;
+    --couleur-bouton-hover: #6F4518;
+    --couleur-card: #583101;
+    --couleur-texte-card: white;
+    --font-size-h1: 3em;
+    --font-size-h2: 2.5em;
+    --font-size-h3: 1.5em;
+    --font-size-h4: 1.2em;
+    --font-size-h5: 1.3em;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+body {
+    background-color: var(--couleur-fond-site);
+    font-family: "Poetsen One", sans-serif;
+}
+
+h1 {
+    font-size: var(--font-size-h1);
+}
+
+h2 {
+    font-size: var(--font-size-h2);
+}
+
+h3 {
+    font-size: var(--font-size-h3);
+}
+
+h4 {
+    font-size: var(--font-size-h4);
+}
+
+h5 {
+    font-size: var(--font-size-h5);
 }
 
 /* <---------- HEADER ----------> */
@@ -9,7 +49,10 @@
 header {
     text-align: center;
     padding: 1rem 2rem;
-    background-color: #EADEB5;
+}
+
+#slogan {
+    font-size: var(--font-size-h3);
 }
 
 #presentation {
@@ -24,13 +67,35 @@ header {
     padding: 1rem;
     border: none;
     border-radius: 20px;
-    color: white;
-    background-color: rgb(121, 12, 12);
+    font-family: "Poetsen One", sans-serif;
+    font-size: var(--font-size-h4);
+    color: var(--couleur-texte-card);
+    background-color: var(--couleur-bouton);
     transition: background-color 0.3s;
 }
 
 #btnDevis:hover {
-    background-color: rgb(169, 16, 16);
+    background-color: var(--couleur-bouton-hover);
+}
+
+
+/* <---------- SECTION TEMOIN ----------> */
+
+#temoignages {
+    text-align: center;
+    padding: 1rem 2rem;
+    margin: 2rem 0;
+    color: white;
+    background-color: var(--couleur-card);
+}
+
+#temoignages h2 {
+    margin-bottom: 2rem;
+}
+
+.engagement {
+    font-size: var(--font-size-h4);
+    padding: 0.2em 0;
 }
 
 
@@ -39,10 +104,9 @@ header {
 #chocolat {
     text-align: center;
     padding: 1rem 2rem;
-    background-color: #F4C895;
 }
 
-#chocolat h2, #client h2 {
+#chocolat h2 {
     margin-bottom: 2rem;
 }
 
@@ -54,21 +118,36 @@ header {
 }
 
 .card {
-    padding: 1rem;
     text-align: center;
-    width: 30%;
+    width: 25%;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1rem;
-    background-color: #fddeb8;
+    color: var(--couleur-texte-card);
+    background-color: var(--couleur-card);
     border-radius: 20px;
     box-shadow: 0 0 5px rgb(0, 0, 0, 0.3);
+    transition: scale 0.3s;
+}
+
+.card:hover {
+    scale: 1.02;
 }
 
 .card img {
-    width: 80%;
-    border-radius: 20px;
+    width: 100%;
+    border-radius: 20px 20px 0 0;
+    border-bottom: 2px solid var(--couleur-fond-site);
+
+}
+
+.card h3 {
+    padding: 0 1rem;
+}
+
+.card p {
+    padding: 0 1rem 1rem 1rem;
 }
 
 
@@ -77,8 +156,10 @@ header {
 #client {
     text-align: center;
     padding: 1rem 2rem;
-    background-color: #AA714B;
-    color: white;
+}
+
+#client h2 {
+    margin-bottom: 2rem;
 }
 
 #commentaires {
@@ -89,7 +170,8 @@ header {
 }
 
 .comments {
-    background-color: #C48E61;
+    color: var(--couleur-texte-card);
+    background-color: var(--couleur-card);
     width: 70%;
     padding: 1rem;
     border-radius: 10px;
@@ -98,4 +180,9 @@ header {
     flex-direction: column;
     align-items: center;
     gap: 0.5rem;
+    transition: scale 0.3s;
+}
+
+.comments:hover {
+    scale: 1.02;
 }

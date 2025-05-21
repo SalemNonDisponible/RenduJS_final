@@ -7,6 +7,7 @@ function afficherTitre(data) {
     h1.textContent = data.nomEntreprise;
 
     let p = document.createElement("p");
+    p.setAttribute("id", "slogan");
     p.textContent = data.slogan;
 
     let button = document.createElement("button");
@@ -18,6 +19,21 @@ function afficherTitre(data) {
     div.appendChild(p);
     div.appendChild(button);
     header.appendChild(div);
+}
+
+function afficherTemoignages(data) {
+    //Récupération du tableau d'objet des produits
+    const temoignages = data.listeBeneficesClients;
+
+    //Boucle pour afficher les témoignages des clients
+    temoignages.forEach(element => {
+        console.log(element);
+        
+        let p = document.createElement("p");
+        p.setAttribute("class", "engagement");
+        p.textContent = element;
+        sctTemoignages.appendChild(p);
+    });
 }
 
 function afficherProduits (data) {
@@ -60,29 +76,30 @@ function afficherCommentaire(data) {
         let div = document.createElement("div");
         div.setAttribute("class", "comments");
 
-        let h4 = document.createElement("h4");
-        h4.textContent = `De ${element.nom}`;
+        let h3 = document.createElement("h3");
+        h3.textContent = `De ${element.nom}`;
 
-        let h5 = document.createElement("h5");
-        h5.textContent = `Type de prestation : ${element.typePrestation}`;
+        let h4 = document.createElement("h4");
+        h4.textContent = `Type de prestation : ${element.typePrestation}`;
 
         let p = document.createElement("p");
         p.textContent = `"${element.commentaire}"`;
 
-        let h6 = document.createElement("h6");
-        h6.textContent = `Note : ${element.note} étoiles`;
+        let h5 = document.createElement("h5");
+        h5.textContent = `Note : ${element.note} étoiles`;
 
         //Placer les éléments créés
+        div.appendChild(h3);
         div.appendChild(h4);
-        div.appendChild(h5);
         div.appendChild(p);
-        div.appendChild(h6);
+        div.appendChild(h5);
         sctCommentaires.appendChild(div);
     });
 }
 
 //Liaison des éléments HTML au JavaScript
 const header = document.getElementById("header");
+const sctTemoignages = document.getElementById("temoignages");
 const sctProduits = document.getElementById("produits");
 const sctCommentaires = document.getElementById("commentaires");
 
@@ -92,6 +109,7 @@ fetch("https://js-dynamic-portfolio-data-makerslab-emlyon-cdweb-8f83155c64a0cc.g
     console.log(data);
 
     afficherTitre(data);
+    afficherTemoignages(data);
     afficherProduits(data);
     afficherCommentaire(data);
 })
